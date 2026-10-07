@@ -29,20 +29,20 @@ the flag.
 4. Inspect the login page source.
 5. Identify the referenced `script.js` resource.
 6. Inspect `script.js` and recover the exposed credentials.
-7. Use the credentials to log in.
+7. Use the discovered credentials to log in.
 8. Recover the CTF flag.
 
-## Intended Credentials
+## Flag Format
 
-Username:
-`teller`
+`CTF{...}`
 
-Password:
-`ledger2026`
+## Hints
 
-## Flag
+### Hint 1
+The browser does not show everything.
 
-`CTF{the_forgotten_login}`
+### Hint 2
+Inspect the HTML source.
 
 ## Docker
 
