@@ -26,3 +26,11 @@ Investigate the image and recover the hidden flag.
 
 ## Flag Format
 CTF{...}
+
+## Hints
+
+### Hint 1
+Look beyond what the image looks like.
+
+### Hint 2
+Examine the file for hidden information.
