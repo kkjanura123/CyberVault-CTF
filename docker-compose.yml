@@ -1,0 +1,34 @@
+services:
+  ctfd:
+    image: ctfd/ctfd:latest
+    container_name: cybervault-ctfd
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:////var/uploads/ctfd.db
+      REDIS_URL: redis://cache:6379
+      SECRET_KEY: ${SECRET_KEY}
+    volumes:
+      - ctfd_data:/var/uploads
+    depends_on:
+      - cache
+    networks:
+      - platform
+
+  cache:
+    image: redis:7-alpine
+    container_name: cybervault-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - platform
+
+networks:
+  platform:
+    driver: bridge
+
+volumes:
+  ctfd_data:
+  redis_data:
